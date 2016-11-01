@@ -87,12 +87,12 @@ echo Creating new Application: %app_name%...
 REM TODO: check errorlevel and bail out if any of the below commands fail..
 
 if EXIST %app_name% (
-  cmd /c git clone git://github.com/%FORK%/roxy.git -b %BRANCH% %app_name%.tmp_1
+  cmd /c git clone https://github.com/%FORK%/roxy.git -b %BRANCH% %app_name%.tmp_1
   xcopy %app_name%.tmp_1\* %app_name%\ /E
   rmdir /s /q %app_name%.tmp_1
 )
 if NOT EXIST %app_name% (
-  cmd /c git clone git://github.com/%FORK%/roxy.git -b %BRANCH% %app_name%
+  cmd /c git clone https://github.com/%FORK%/roxy.git -b %BRANCH% %app_name%
 )
 
 pushd %app_name%
